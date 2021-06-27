@@ -254,12 +254,14 @@ body {
   font-weight: 200;
   letter-spacing: 1px;
   font-size: 0.8em;
+  color: white;
 }
 .galeryss li {
   width: 178px;
   height: 178px;
   margin: 20px;
   float: left;
+
   list-style: none;
 }
 .galeryss li a {
@@ -267,7 +269,7 @@ body {
   color: white;
 }
 .galeryss li img {
-  border: 5px solid #cfcdcd;
+  border: 5px solid white;
   transition: 0.3s;
 }
 .galeryss li a:hover img {
@@ -358,6 +360,7 @@ body {
   text-align: center;
   text-transform: uppercase;
   color: #08c3fc;
+  padding: 10px;
 }
 .row {
   display: grid;
@@ -368,24 +371,54 @@ body {
   background-color: #08c3fc;
   justify-content: center;
 }
-.form .btn {
-  display: inline-block;
+.form .alert {
+  display: grid;
   text-align: center;
+  color: white;
+  padding: 10px;
+}
+.form .btn {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(1px, 1fr));
+  position: relative;
+  left: 0;
+  top: 0;
+  padding: 3px;
+}
+.form .btnn {
+  display: inline-block;
+  width: 50%;
+  position: relative;
+  top: 0;
+  left: 45px;
+  background-color: green;
+  color: white;
+  text-align: center;
+}
+.form .btnn:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  background-color: #388a38;
 }
 .form-group {
   display: grid;
   margin: 10px;
 }
 .form .form-controll {
-  display: inline-block;
-  height: 100px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(3500, 1fr));
   overflow: visible;
 }
 .form-control {
-  display: inline;
-  width: 350px;
+  display: grid;
   height: 20px;
   background-color: white;
+}
+.form input:hover {
+  transform: scale(1.02);
+}
+.form textarea:hover {
+  transform: scale(1.02);
 }
 /* footer */
 .footer {
