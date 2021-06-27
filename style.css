@@ -1,0 +1,250 @@
+/* untuk semua area */
+* {
+  margin: 0;
+  padding: 0;
+}
+/* untuk img nya lebar 100% */
+img {
+  width: 100%;
+}
+/* untuk body*/
+body {
+  background-color: white;
+  font-size: 18px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 50px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+/* coutainer */
+.container {
+  display: grid;
+  gap: 10px;
+}
+/* header */
+.header {
+  display: grid;
+  grid-template-areas:
+    "hero"
+    "name"
+    "status";
+}
+.hero {
+  display: grid;
+  grid-area: hero;
+  background-color: white;
+  justify-items: center;
+  align-items: center;
+  padding: 10px;
+}
+.hero img {
+  height: 180px;
+  width: 180px;
+  border-radius: 50%;
+  border: 2px solid rgb(17, 17, 17);
+  cursor: pointer;
+}
+.name {
+  display: grid;
+  text-align: center;
+  justify-items: center;
+  align-items: center;
+  padding: 10px;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+}
+.status {
+  display: grid;
+  text-align: center;
+  justify-items: center;
+  align-items: center;
+  font-size: 1em;
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+}
+/* navigasi */
+.menu {
+  order: -1;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+}
+.menu .brand {
+  font-size: 0.7em;
+  color: #08c3fc;
+}
+.menu ul {
+  display: grid;
+  list-style: none;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 5px;
+}
+.menu a {
+  display: block;
+  background-color: #08c3fc;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  padding: 5px;
+  text-transform: uppercase;
+  font-size: 0.7em;
+}
+/* Hamburger Menu */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 20px;
+  /* background-color: black; */
+  position: relative;
+  z-index: 999;
+}
+.menu-toggle span {
+  display: block;
+  width: 28px;
+  height: 3px;
+  background: black;
+  border-radius: 3px;
+  transition: all 0.5s;
+}
+.menu-toggle input {
+  display: block;
+  position: absolute;
+  background-color: black;
+  width: 40px;
+  height: 28px;
+  left: -5px;
+  top: -5px;
+  cursor: pointer;
+  opacity: 0;
+  z-index: 999;
+}
+/* Hamburger Menu Animation */
+.menu-toggle span:nth-child(2) {
+  transform-origin: 0 0;
+}
+.menu-toggle span:nth-child(4) {
+  transform-origin: 0 100%;
+}
+.menu-toggle input:checked ~ span:nth-child(2) {
+  background-color: #08c3fc;
+  transform: rotate(45deg) translate(-1px, -1px);
+}
+.menu-toggle input:checked ~ span:nth-child(4) {
+  background-color: #08c3fc;
+  transform: rotate(-45deg) translate(-1px, 0px);
+}
+.menu-toggle input:checked ~ span:nth-child(3) {
+  opacity: 0;
+  transform: scale(0);
+}
+/* About Me */
+.about {
+  display: grid;
+  grid-template-areas:
+    "abouts"
+    "aboutme";
+}
+.abouts h2 {
+  text-align: center;
+  color: #08c3fc;
+  padding: 30px;
+  text-transform: uppercase;
+}
+.aboutss {
+  color: white;
+  background-color: #08c3fc;
+  text-align: center;
+  padding: 15px;
+  border: 1px solid #aaa;
+  border-radius: 3px;
+}
+.aboutme {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+.aboutme h3 {
+  font-size: 1.5em;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+.aboutme p {
+  font-weight: 200;
+  letter-spacing: 1px;
+  font-size: 0.8em;
+}
+
+/* footer */
+.footer {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  margin-top: 20px;
+  height: 30px;
+  color: white;
+  background-color: #08c3fc;
+  text-align: center;
+}
+/* Responsive Breakpoin */
+@media (max-width: 1024px) {
+  .menu {
+    order: inherit;
+    grid-template-columns: 1fr;
+  }
+  .menu .brand {
+    display: none;
+  }
+}
+/* Mobile */
+@media (max-width: 768px) {
+  .menu .brand {
+    display: grid;
+    grid-template-columns: 1fr max-content 7.2fr;
+    margin-top: -20px;
+    font-size: 0.5em;
+  }
+  .menu {
+    order: -1;
+    justify-items: end;
+  }
+  .menu-toggle {
+    display: flex;
+  }
+  .menu ul {
+    display: flex;
+    position: absolute;
+    right: 0;
+    height: 100vh;
+    top: 0;
+    background-color: white;
+    width: 50%;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    z-index: 1;
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: all 1s;
+  }
+  .menu ul.slide {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (max-width: 500px) {
+  .menu .brand {
+    display: grid;
+    grid-template-columns: 1fr max-content 5fr;
+    margin-top: -20px;
+    font-size: 0.5em;
+  }
+  .header {
+    display: grid;
+    grid-template-areas:
+      "hero"
+      "name"
+      "status";
+  }
+}
