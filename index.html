@@ -189,7 +189,7 @@
         <div class="contactme">
           <h2>Contact</h2>
         </div>
-        <form class="form">
+        <form class="form" name="my-portfolio-form">
           <div class="alert">
             <strong> Terimakasih! Pesan anda sudah kami terima. </strong>
           </div>
@@ -202,12 +202,12 @@
             <input type="email" id="email" name="email" class="form-group" placeholder=" Masukan email" required />
           </div>
           <div class="form-group">
-            <label for="textarea">Pesan</label>
-            <textarea id="textarea" name="textarea" class="form-group" rows="10" placeholder=" Masukan pesan anda" required></textarea>
+            <label for="pesan">Pesan</label>
+            <textarea id="pesan" name="pesan" class="form-group" rows="10" placeholder=" Masukan pesan anda" required></textarea>
           </div>
           <div class="btn">
-            <button class="btnn" type="submit">Kirim</button>
-            <button class="btnn" type="submit">Cancel</button>
+            <button class="btn-kirim" type="submit">Kirim</button>
+            <button class="btn-batal" type="reset">Cancel</button>
           </div>
         </form>
       </section>
@@ -222,6 +222,23 @@
 
       menuToggle.addEventListener("click", function () {
         nav.classList.toggle("slide");
+      });
+    </script>
+    <script>
+      const scriptURL = "https://script.google.com/macros/s/AKfycbyUV8VNjAj4gYOIcOW4PUyg-qL3P5vzsw1l9GlVXSVvU2XQHwhwZMFsPjdzBwOKmzCT/exec";
+      const form = document.forms["my-portfolio-form"];
+      const btnKirim = document.querySelector(".btn-kirim");
+      const myAlert = document.querySelector(".alert");
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        fetch(scriptURL, { method: "POST", body: new FormData(form) })
+          .then((response) => {
+            myAlert.classList.toggle("warning");
+            form.reset();
+            console.log("Success!", response);
+          })
+          .catch((error) => console.error("Error!", error.message));
       });
     </script>
   </body>

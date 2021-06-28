@@ -23,14 +23,9 @@ body {
 /* header */
 .header {
   display: grid;
-  grid-template-areas:
-    "hero"
-    "name"
-    "status";
 }
 .hero {
   display: grid;
-  grid-area: hero;
   background-color: white;
   justify-items: center;
   align-items: center;
@@ -360,7 +355,6 @@ body {
   text-transform: uppercase;
   color: #08c3fc;
   padding: 10px;
-  cursor: pointer;
 }
 .form {
   display: grid;
@@ -368,13 +362,16 @@ body {
   height: auto;
   background-color: #08c3fc;
 }
-.form .alert {
+.alert {
   display: none;
   text-align: center;
   color: white;
   padding: 10px;
+  opacity: 0;
+}
+.alert.warning {
+  display: grid;
   opacity: 1;
-  transition: all 1s;
 }
 .form-group {
   display: grid;
@@ -387,7 +384,7 @@ body {
   width: 50px;
   height: auto;
 }
-.form .btn {
+.btn {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(1px, 1fr));
   position: relative;
@@ -395,7 +392,7 @@ body {
   top: 0;
   padding: 3px;
 }
-.form .btnn {
+.btn .btn-kirim {
   display: inline-block;
   width: 50%;
   position: relative;
@@ -405,16 +402,33 @@ body {
   color: white;
   text-align: center;
 }
-.form .btnn:hover {
+.btn .btn-batal {
+  display: inline-block;
+  width: 50%;
+  position: relative;
+  top: 0;
+  left: 45px;
+  background-color: green;
+  color: white;
+  text-align: center;
+}
+.btn .btn-kirim:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  background-color: #388a38;
+}
+.btn .btn-batal:hover {
   cursor: pointer;
   transform: scale(1.1);
   background-color: #388a38;
 }
 .form input:hover {
   transform: scale(1.02);
+  color: rgb(124, 73, 73);
 }
 .form textarea:hover {
   transform: scale(1.02);
+  color: rgb(172, 171, 171);
 }
 /* footer */
 .footer {
@@ -444,7 +458,7 @@ body {
     display: grid;
     order: -1;
     position: fixed;
-    right: 0;
+    right: 10px;
     justify-items: end;
   }
   .menu-toggle {
@@ -477,9 +491,6 @@ body {
     width: 360px;
     height: auto;
     background-color: #08c3fc;
-  }
-  body {
-    margin: 10px;
   }
   .header {
     display: grid;
