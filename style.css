@@ -351,7 +351,6 @@ body {
 /* Contact */
 .contact {
   display: grid;
-  grid-template-columns: 1fr;
   justify-content: center;
   align-content: center;
 }
@@ -361,21 +360,32 @@ body {
   text-transform: uppercase;
   color: #08c3fc;
   padding: 10px;
-}
-.row {
-  display: grid;
-  gap: 5px;
+  cursor: pointer;
 }
 .form {
   display: grid;
+  width: 500px;
+  height: auto;
   background-color: #08c3fc;
-  justify-content: center;
 }
 .form .alert {
-  display: grid;
+  display: none;
   text-align: center;
   color: white;
   padding: 10px;
+  opacity: 1;
+  transition: all 1s;
+}
+.form-group {
+  display: grid;
+  margin: 10px;
+}
+.form-group label {
+  display: grid;
+  cursor: pointer;
+  color: white;
+  width: 50px;
+  height: auto;
 }
 .form .btn {
   display: grid;
@@ -399,20 +409,6 @@ body {
   cursor: pointer;
   transform: scale(1.1);
   background-color: #388a38;
-}
-.form-group {
-  display: grid;
-  margin: 10px;
-}
-.form .form-controll {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(3500, 1fr));
-  overflow: visible;
-}
-.form-control {
-  display: grid;
-  height: 20px;
-  background-color: white;
 }
 .form input:hover {
   transform: scale(1.02);
@@ -476,6 +472,15 @@ body {
   }
 }
 @media (max-width: 500px) {
+  .form {
+    display: grid;
+    width: 360px;
+    height: auto;
+    background-color: #08c3fc;
+  }
+  body {
+    margin: 10px;
+  }
   .header {
     display: grid;
     grid-template-areas:
