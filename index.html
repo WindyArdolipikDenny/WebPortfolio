@@ -45,7 +45,7 @@
           <div class="aboutss">
             <div class="icon"></div>
             <h3>Tentang Saya</h3>
-            <p>
+            <p class="pKiri">
               Saya adalah seorang laki-laki yang berumur 26 tahun. Saya lahir di tangerang 06 desember 1994.Selain itu hobi saya adalah bermain futsal dan badminton. saya anak pertama dari 3 bersaudara. Motivasi saya adalah membahagiakan orang tua dan mengejar
               mimpi saya dengan bekerja keras dan menjadi karyawan teladan diperusahahn dimana saya diterima.
             </p>
@@ -53,21 +53,21 @@
           <div class="aboutss">
             <div class="icon"></div>
             <h3>SKILL</h3>
-            <p>Html5</p>
-            <p>CSS3</p>
-            <p>PHP</p>
-            <p>Javascript</p>
-            <p>Bootstrap5</p>
-            <p>CodeIgenter</p>
-            <p>Laravel</p>
+            <p class="pTengah">Html5</p>
+            <p class="pTengah">CSS3</p>
+            <p class="pTengah">PHP</p>
+            <p class="pTengah">Javascript</p>
+            <p class="pTengah">Bootstrap5</p>
+            <p class="pTengah">CodeIgenter</p>
+            <p class="pTengah">Laravel</p>
           </div>
           <div class="aboutss">
             <div class="icon"></div>
             <h3>HOBI</h3>
-            <p>Futsal</p>
-            <p>Badminton</p>
-            <p>Karate</p>
-            <p>Musik</p>
+            <p class="pKanan">Futsal</p>
+            <p class="pKanan">Badminton</p>
+            <p class="pKanan">Karate</p>
+            <p class="pKanan">Musik</p>
           </div>
         </div>
       </section>
@@ -116,7 +116,7 @@
                 <span>Html CSS JavaScript</span>
               </a>
               <div class="overlay" id="gambar-1">
-                <a href="#galery" class="close">X Close</a>
+                <a href="#galery-1" class="close">X Close</a>
                 <img src="img/1.jpg" alt="img" />
               </div>
             </li>
@@ -126,7 +126,7 @@
                 <span>Html CSS JavaScript</span>
               </a>
               <div class="overlay" id="gambar-2">
-                <a href="#gallery" class="close">X Close</a>
+                <a href="#gallery-2" class="close">X Close</a>
                 <img src="img/2.jpg" alt="img" />
               </div>
             </li>
@@ -136,48 +136,8 @@
                 <span>Html CSS JavaScript</span>
               </a>
               <div class="overlay" id="gambar-3">
-                <a href="#galery" class="close">X Close</a>
+                <a href="#galery-3" class="close">X Close</a>
                 <img src="img/3.jpg" alt="img" />
-              </div>
-            </li>
-            <li>
-              <a href="#gambar-1">
-                <img src="img/1.jpg" alt="img" />
-                <span>Html CSS JavaScript</span>
-              </a>
-              <div class="overlay" id="gambar-1">
-                <a href="#galery" class="close">X Close</a>
-                <img src="img/1.jpg" alt="img" />
-              </div>
-            </li>
-            <li>
-              <a href="#gambar-1">
-                <img src="img/1.jpg" alt="img" />
-                <span>Html CSS JavaScript</span>
-              </a>
-              <div class="overlay" id="gambar-1">
-                <a href="#galery" class="close">X Close</a>
-                <img src="img/1.jpg" alt="img" />
-              </div>
-            </li>
-            <li>
-              <a href="#gambar-1">
-                <img src="img/1.jpg" alt="img" />
-                <span>Html CSS JavaScript</span>
-              </a>
-              <div class="overlay" id="gambar-1">
-                <a href="#galery" class="close">X Close</a>
-                <img src="img/1.jpg" alt="img" />
-              </div>
-            </li>
-            <li>
-              <a href="#gambar-1">
-                <img src="img/1.jpg" alt="img" />
-                <span>Html CSS JavaScript</span>
-              </a>
-              <div class="overlay" id="gambar-1">
-                <a href="#galery" class="close">X Close</a>
-                <img src="img/1.jpg" alt="img" />
               </div>
             </li>
             <div class="clear"></div>
@@ -216,30 +176,7 @@
         <footer>Windy Ardolipik Denny @CopyRight</footer>
       </div>
     </div>
-    <script>
-      const menuToggle = document.querySelector(".menu-toggle");
-      const nav = document.querySelector("nav ul");
-
-      menuToggle.addEventListener("click", function () {
-        nav.classList.toggle("slide");
-      });
-    </script>
-    <script>
-      const scriptURL = "https://script.google.com/macros/s/AKfycbyUV8VNjAj4gYOIcOW4PUyg-qL3P5vzsw1l9GlVXSVvU2XQHwhwZMFsPjdzBwOKmzCT/exec";
-      const form = document.forms["my-portfolio-form"];
-      const btnKirim = document.querySelector(".btn-kirim");
-      const myAlert = document.querySelector(".alert");
-
-      form.addEventListener("submit", (e) => {
-        e.preventDefault();
-        fetch(scriptURL, { method: "POST", body: new FormData(form) })
-          .then((response) => {
-            myAlert.classList.toggle("warning");
-            form.reset();
-            console.log("Success!", response);
-          })
-          .catch((error) => console.error("Error!", error.message));
-      });
-    </script>
+    <script src="script.js"></script>
+    <script src="jquery-3.6.0.min.js"></script>
   </body>
 </html>

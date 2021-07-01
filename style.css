@@ -132,11 +132,11 @@ body {
   transform-origin: 0 100%;
 }
 .menu-toggle input:checked ~ span:nth-child(2) {
-  background-color: #08c3fc;
+  background-color: black;
   transform: rotate(45deg) translate(-1px, -1px);
 }
 .menu-toggle input:checked ~ span:nth-child(4) {
-  background-color: #08c3fc;
+  background-color: black;
   transform: rotate(-45deg) translate(-1px, 0px);
 }
 .menu-toggle input:checked ~ span:nth-child(3) {
@@ -342,7 +342,6 @@ body {
     margin-top: 0;
   }
 }
-
 /* Contact */
 .contact {
   display: grid;
@@ -386,49 +385,39 @@ body {
 }
 .btn {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(1px, 1fr));
-  position: relative;
-  left: 0;
-  top: 0;
-  padding: 3px;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  padding-bottom: 15px;
+  text-align: center;
+  justify-items: center;
+  align-items: center;
 }
 .btn .btn-kirim {
-  display: inline-block;
-  width: 50%;
-  position: relative;
-  top: 0;
-  left: 45px;
-  background-color: green;
+  background-color: red;
   color: white;
-  text-align: center;
+  border: 1px solid white;
+  padding: 2px;
 }
 .btn .btn-batal {
-  display: inline-block;
-  width: 50%;
-  position: relative;
-  top: 0;
-  left: 45px;
-  background-color: green;
+  background-color: red;
   color: white;
-  text-align: center;
+  border: 1px solid white;
+  padding: 2px;
 }
 .btn .btn-kirim:hover {
   cursor: pointer;
   transform: scale(1.1);
-  background-color: #388a38;
+  color: white;
 }
 .btn .btn-batal:hover {
   cursor: pointer;
   transform: scale(1.1);
-  background-color: #388a38;
+  color: white;
 }
 .form input:hover {
   transform: scale(1.02);
-  color: rgb(124, 73, 73);
 }
 .form textarea:hover {
   transform: scale(1.02);
-  color: rgb(172, 171, 171);
 }
 /* footer */
 .footer {
@@ -456,8 +445,8 @@ body {
 @media (max-width: 768px) {
   .menu {
     display: grid;
-    order: -1;
     position: fixed;
+    order: -1;
     right: 10px;
     justify-items: end;
   }
