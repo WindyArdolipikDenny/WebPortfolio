@@ -17,8 +17,6 @@ body {
 /* coutainer */
 .container {
   display: grid;
-  padding-bottom: 10px;
-  gap: 10px;
 }
 /* header */
 .header {
@@ -29,7 +27,7 @@ body {
   background-color: white;
   justify-items: center;
   align-items: center;
-  padding: 10px;
+  padding-top: 5px;
 }
 .hero img {
   height: 180px;
@@ -43,7 +41,7 @@ body {
   text-align: center;
   justify-items: center;
   align-items: center;
-  padding: 10px;
+  padding-top: 15px;
   font-size: 1.5em;
   font-weight: bold;
   color: rgb(0, 0, 0);
@@ -51,8 +49,6 @@ body {
 .status {
   display: grid;
   text-align: center;
-  justify-items: center;
-  align-items: center;
   font-size: 1em;
   font-weight: bold;
   color: rgb(0, 0, 0);
@@ -63,6 +59,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 2fr;
   align-items: center;
+  padding-top: 10px;
 }
 .menu .brand {
   font-size: 0.7em;
@@ -153,14 +150,15 @@ body {
 .abouts h2 {
   text-align: center;
   color: #08c3fc;
-  padding: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   text-transform: uppercase;
 }
 .aboutss {
   color: white;
   background-color: #08c3fc;
   text-align: center;
-  padding: 15px;
+  padding: 5px;
   border: 1px solid #aaa;
   border-radius: 3px;
 }
@@ -178,6 +176,30 @@ body {
   font-weight: 200;
   letter-spacing: 1px;
   font-size: 0.8em;
+  text-align: center;
+}
+.pKiri,
+.pKanan {
+  opacity: 0;
+  transform: translate(-50px, 0);
+  transition: 1s;
+}
+.pKanan {
+  transform: translate(50px, 0);
+}
+.pKiri.pMuncul,
+.pKanan.pMuncul {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+.pTengah {
+  opacity: 0;
+  transform: translatey(50px, 0);
+  transition: 1s;
+}
+.pTengah.pMuncul {
+  opacity: 1;
+  transform: translateY(0, 0);
 }
 
 /* My Project */
@@ -190,14 +212,15 @@ body {
 .projects h2 {
   text-align: center;
   color: #08c3fc;
-  padding: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   text-transform: uppercase;
 }
 .projectss {
   color: white;
   background-color: #08c3fc;
   text-align: center;
-  padding: 15px;
+  padding: 10px;
   border: 1px solid #aaa;
   border-radius: 3px;
 }
@@ -232,8 +255,17 @@ body {
 .galerys h2 {
   text-align: center;
   color: #08c3fc;
-  padding: 20px;
+  padding: 10px;
   text-transform: uppercase;
+}
+.galery .thumbnail {
+  opacity: 0;
+  transform: translate(0, -40px);
+  transition: 1s;
+}
+.galery .thumbnail.muncul {
+  opacity: 1;
+  transform: 0, 0;
 }
 .galeryss {
   display: grid;
