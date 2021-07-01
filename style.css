@@ -60,6 +60,7 @@ body {
   grid-template-columns: 1fr 2fr;
   align-items: center;
   padding-top: 10px;
+  z-index: 9999;
 }
 .menu .brand {
   font-size: 0.7em;
@@ -80,6 +81,7 @@ body {
   padding: 5px;
   text-transform: uppercase;
   font-size: 0.7em;
+  border: 1px solod #ffffff;
 }
 .menu a:hover {
   display: block;
@@ -99,7 +101,7 @@ body {
   height: 20px;
   /* background-color: black; */
   position: relative;
-  z-index: 999;
+  z-index: 9999;
 }
 .menu-toggle span {
   display: block;
@@ -119,7 +121,7 @@ body {
   top: -5px;
   cursor: pointer;
   opacity: 0;
-  z-index: 999;
+  z-index: 9999;
 }
 /* Hamburger Menu Animation */
 .menu-toggle span:nth-child(2) {
@@ -194,12 +196,12 @@ body {
 }
 .pTengah {
   opacity: 0;
-  transform: translatey(50px, 0);
+  transform: translate(50px, 0) rotate(-45deg);
   transition: 1s;
 }
 .pTengah.pMuncul {
   opacity: 1;
-  transform: translateY(0, 0);
+  transform: translate(0, 0);
 }
 
 /* My Project */
@@ -477,9 +479,9 @@ body {
 @media (max-width: 768px) {
   .menu {
     display: grid;
-    position: fixed;
+    position: relative;
     order: -1;
-    right: 10px;
+    right: 0;
     justify-items: end;
   }
   .menu-toggle {
@@ -487,7 +489,7 @@ body {
   }
   .menu ul {
     display: flex;
-    position: fixed;
+    position: absolute;
     right: 0;
     height: 100vh;
     top: 0;
