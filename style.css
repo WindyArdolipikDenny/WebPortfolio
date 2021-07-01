@@ -479,7 +479,6 @@ body {
 @media (max-width: 768px) {
   .menu {
     display: grid;
-    position: relative;
     order: -1;
     right: 0;
     justify-items: end;
