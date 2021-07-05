@@ -4,7 +4,6 @@ const nav = document.querySelector("nav ul");
 
 menuToggle.addEventListener("click", function () {
   nav.classList.toggle("slide");
-
 });
 nav.addEventListener("click", function () {
   nav.classList.toggle("slide");
@@ -63,7 +62,7 @@ $(window).scroll(function () {
       }, 300 * (i + 1));
     });
   } else {
-     $(".galery .thumbnail").each(function (i) {
+    $(".galery .thumbnail").each(function (i) {
       setTimeout(function () {
         $(".galery .thumbnail").eq(i).removeClass("muncul");
       }, 300 * (i + 1));
@@ -76,7 +75,7 @@ $(window).scroll(function () {
       }, 300 * (i + 1));
     });
   } else {
-       $(".project .projectss").each(function (i) {
+    $(".project .projectss").each(function (i) {
       setTimeout(function () {
         $(".project .projectss").eq(i).removeClass("pMuncul");
       }, 300 * (i + 1));
@@ -88,12 +87,18 @@ $(window).scroll(function () {
         $(".form").eq(i).addClass("fMuncul");
       }, 100 * (i + 1));
     });
+  } else {
+    $(".form").each(function (i) {
+      setTimeout(function () {
+        $(".form").eq(i).removeClass("fMuncul");
+      }, 100 * (i + 1));
+    });
   }
   if (wScroll > $(".contact").offset().top - 400) {
     $(".form .formGroup").each(function (i) {
       setTimeout(function () {
         $(".form .formGroup").eq(i).addClass("fgMuncul");
-      }, 500 * (i + 1));
+      }, 200 * (i + 1));
     });
     $(".btn .btnKirim").addClass("bkMuncul");
     $(".btn .btnBatal").addClass("bbMuncul");
@@ -101,7 +106,7 @@ $(window).scroll(function () {
     $(".form .formGroup").each(function (i) {
       setTimeout(function () {
         $(".form .formGroup").eq(i).removeClass("fgMuncul");
-      }, 500 * (i + 1));
+      }, 200 * (i + 1));
     });
     $(".btn .btnKirim").removeClass("bkMuncul");
     $(".btn .btnBatal").removeClass("bbMuncul");
@@ -113,7 +118,7 @@ $(window).scroll(function () {
       }, 300 * (i + 1));
     });
   } else {
-     $(".footer").each(function (i) {
+    $(".footer").each(function (i) {
       setTimeout(function () {
         $(".footer").eq(i).removeClass("foMuncul");
       }, 300 * (i + 1));
