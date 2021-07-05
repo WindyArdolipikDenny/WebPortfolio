@@ -21,10 +21,23 @@ body {
 /* header */
 .header {
   display: grid;
+  background-color: #08c3fc;
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid #e1e1e1;
+  border-radius: 50px 10px 50px 10px;
+  box-shadow: 0 0 1px 1px #e1e1e1;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(100%, 0);
+  transition: 2s;
+}
+.header.hMuncul {
+  opacity: 1;
+  transform: translateY(0, 0);
 }
 .hero {
   display: grid;
-  background-color: white;
   justify-items: center;
   align-items: center;
   padding-top: 5px;
@@ -33,33 +46,54 @@ body {
   height: 180px;
   width: 180px;
   border-radius: 50%;
-  border: 2px solid rgb(17, 17, 17);
+  border: 2px solid white;
   cursor: pointer;
+  box-shadow: 0 0 1px 1px #e1e1e1;
+  opacity: 0;
+  transform: rotate(150deg);
+  transition: 1s;
+}
+.hero img.iMuncul {
+  opacity: 1;
+  transform: rotate(0);
 }
 .name {
   display: grid;
   text-align: center;
   justify-items: center;
   align-items: center;
-  padding-top: 15px;
+  padding: 10px;
   font-size: 1.5em;
   font-weight: bold;
-  color: rgb(0, 0, 0);
+  color: white;
+  opacity: 0;
+  transform: translateY(-100%, 0);
+  transition: 2s;
+}
+.name.nMuncul {
+  opacity: 1;
+  transform: translateY(0, 0);
 }
 .status {
   display: grid;
   text-align: center;
   font-size: 1em;
   font-weight: bold;
-  color: rgb(0, 0, 0);
+  color: white;
+  padding-bottom: 10px;
+  opacity: 0;
+  transform: translate(50px, 0);
+  transition: 1.5;
+}
+.status.sMuncul {
+  opacity: 1;
+  transform: translate(0, 0);
 }
 /* navigasi */
 .menu {
   order: -1;
   display: grid;
   grid-template-columns: 1fr 2fr;
-  align-items: center;
-  padding-top: 10px;
   z-index: 9999;
 }
 .menu .brand {
@@ -71,7 +105,16 @@ body {
   list-style: none;
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   gap: 5px;
+  /* opacity: 0;
+  justify-content: center;
+  align-content: center;
+  transform: translate(-40px, 0);
+  transition: 3s; */
 }
+/* .menu ul.mMuncul {
+  opacity: 1;
+  transform: translate(0, 0);
+} */
 .menu a {
   display: block;
   background-color: #08c3fc;
@@ -226,12 +269,31 @@ body {
   border: 1px solid #aaa;
   border-radius: 3px;
 }
+.projectss img {
+  width: 200px;
+}
+.project .projectss {
+  opacity: 0;
+  transform: translateY(-40%);
+  transition: 2s;
+}
+.project .projectss.pMuncul {
+  opacity: 1;
+  transform: translateY(0);
+}
+.projectss.pMuncul:hover {
+  cursor: pointer;
+  background-color: white;
+  color: #08c3fc;
+  transform: scale(0.9);
+  border: 1px solid #ffff;
+}
 .projectss .link a {
-  color: white;
+  color: #066aff;
   text-decoration: none;
 }
 .projectss .link a:hover {
-  color: white;
+  color: #08c3fc;
   text-decoration: none;
 }
 .projectme {
@@ -240,8 +302,7 @@ body {
   gap: 20px;
 }
 .projectme h3 {
-  font-size: 1.5em;
-  text-transform: uppercase;
+  font-size: 1em;
   margin-bottom: 5px;
 }
 .projectme p {
@@ -395,6 +456,15 @@ body {
   height: auto;
   background-color: #08c3fc;
 }
+.form {
+  opacity: 0;
+  transform: translateY(-40%);
+  transition: 2s;
+}
+.form.fMuncul {
+  opacity: 1;
+  transform: translateY(0);
+}
 .alert {
   display: none;
   text-align: center;
@@ -406,11 +476,17 @@ body {
   display: grid;
   opacity: 1;
 }
-.form-group {
+.formGroup {
   display: grid;
   margin: 10px;
+  opacity: 0;
+  transform: translateY(-40%);
 }
-.form-group label {
+.formGroup.fgMuncul {
+  opacity: 1;
+  transform: translateY(0);
+}
+.formGroup label {
   display: grid;
   cursor: pointer;
   color: white;
@@ -425,24 +501,38 @@ body {
   justify-items: center;
   align-items: center;
 }
-.btn .btn-kirim {
+.btn .btnKirim {
   background-color: red;
   color: white;
   border: 1px solid white;
   padding: 2px;
+  opacity: 0;
+  transform: translate(-40px, 0);
+  transition: 2s;
 }
-.btn .btn-batal {
+.btn .btnKirim.bkMuncul {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+.btn .btnBatal {
   background-color: red;
   color: white;
   border: 1px solid white;
   padding: 2px;
+  opacity: 0;
+  transform: translate(40px, 0);
+  transition: 2s;
 }
-.btn .btn-kirim:hover {
+.btn .btnBatal.bbMuncul {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+.btn .btnKirim:hover {
   cursor: pointer;
   transform: scale(1.1);
   color: white;
 }
-.btn .btn-batal:hover {
+.btn .btnBatal:hover {
   cursor: pointer;
   transform: scale(1.1);
   color: white;
@@ -463,6 +553,13 @@ body {
   color: white;
   background-color: #08c3fc;
   text-align: center;
+  opacity: 0;
+  transform: translate(-90px, 0);
+  transition: 2s;
+}
+.footer.foMuncul {
+  opacity: 1;
+  transform: translate(0, 0);
 }
 /* Responsive Breakpoin */
 @media (max-width: 1024px) {
@@ -482,6 +579,8 @@ body {
     order: -1;
     right: 0;
     justify-items: end;
+    position: fixed;
+    width: 50%;
   }
   .menu-toggle {
     display: flex;
@@ -493,7 +592,7 @@ body {
     height: 100vh;
     top: 0;
     background-color: white;
-    width: 50%;
+    width: 100%;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
